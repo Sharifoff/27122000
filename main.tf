@@ -8,12 +8,12 @@ terraform {
 
   required_version = ">= 1.2.0"
 
-  
+
   #backend "s3" {
-   
-    #bucket = "soccar081222"
-    #key    = "global/s3/terraform.tfstate"
-    #region = "us-east-1"
+
+  #bucket = "soccar081222"
+  #key    = "global/s3/terraform.tfstate"
+  #region = "us-east-1"
   #}
 
 }
@@ -24,10 +24,10 @@ provider "aws" {
 
 
 resource "aws_default_vpc" "default" {
-    tags = {
-      Name = "Default VPC"
-    }
+  tags = {
+    Name = "Default VPC"
   }
+}
 
 resource "aws_instance" "app_server" {
   ami           = "ami-0b0dcb5067f052a63"
@@ -43,7 +43,7 @@ resource "aws_instance" "app_server" {
 resource "aws_s3_bucket" "terraform_state" {
   bucket = "soccar081222"
 
-  
+
 }
 
 
